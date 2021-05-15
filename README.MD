@@ -1,4 +1,4 @@
-### Project based on Symfony 5.* and Docker included
+### Project based on Symfony 5.2.* and Docker included
 
 ## Description
 Clear Symfony application with Docker, Mysql, PHP8 and Nginx. You can develop for your needs as project symfony starter.
