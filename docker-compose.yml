@@ -12,10 +12,10 @@ services:
       - symfony-app-network
 
   symfony-app-database:
-    image: mysql:5.7
+    image: mysql:8.0
     container_name: symfony-app-database
     ports:
-      - "3309:3306"
+      - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: ${DB_DATABASE}

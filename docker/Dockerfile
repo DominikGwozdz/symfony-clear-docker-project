@@ -4,7 +4,14 @@ FROM php:8.0.0-fpm
 RUN apt-get update && apt-get install -y apt-utils && apt-get install -y git && apt-get install -y libzip-dev && apt-get install -y zip && apt-get install -y libicu-dev
 
 # Install PHP extensions
-RUN docker-php-ext-install pdo_mysql zip intl opcache session
+RUN docker-php-ext-install pdo_mysql zip intl opcache session \
+    && pecl install xdebug \
+    && pecl install apcu \
+    && pecl install redis \
+    && docker-php-ext-enable \
+        xdebug \
+        redis \
+        apcu
 
 # Get latest Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
